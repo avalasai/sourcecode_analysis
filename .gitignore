@@ -1,0 +1,6 @@
+/sourcecode
+/notes.txt
+.env
+GenerativeAI.egg-info
+build
+dist
