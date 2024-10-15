@@ -20,11 +20,7 @@ persist_directory = "db"
 vectordb = Chroma(persist_directory=persist_directory,embedding_function=embeddings)
 
 
-# retriever = vectordb.as_retriever(search_kwargs={"k": 2})
-# docs = retriever.get_relevant_documents("what is data ingestion function?")
-# print(docs)
 
-#llm = ChatOpenAI()
 
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
 memory = ConversationSummaryMemory(llm=llm, memory_key = "chat_history", return_messages=True)

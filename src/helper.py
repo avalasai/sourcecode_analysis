@@ -4,13 +4,14 @@ from langchain.document_loaders.generic import GenericLoader
 from langchain.document_loaders.parsers import LanguageParser
 from langchain.text_splitter import Language
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
+# from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 #clone any github repositories 
 def repo_ingestion(repo_url):
+    repo = repo_url[10:]
     os.makedirs("repo", exist_ok=True)
-    repo_path = "repo/"
+    repo_path = repo+"/"
     Repo.clone_from(repo_url, to_path=repo_path)
 
 
